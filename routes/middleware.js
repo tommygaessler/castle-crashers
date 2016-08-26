@@ -19,6 +19,7 @@ function findOne (req, res, next) {
   }
 }
 
+// checks if kingdom is destroyed
 function kingdomIsDestroyed (req, res, next) {
   if (Castle.isDestroyed()) {
     res.status(500).send('All the castles are destroyed!');
