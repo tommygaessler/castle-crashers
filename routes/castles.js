@@ -5,10 +5,12 @@ var Castle = require('../models/castle');
 
 router.use(kingdomIsDestroyed);
 
+// making instance of castle named kingdom
 var kingdom = [new Castle()];
 router.get('/', function (req, res) {
   res.send(kingdom);
 });
+
 
 router.get('/:id', findOne, function (req, res) {
   res.send(req.body.castle);

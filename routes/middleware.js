@@ -8,9 +8,11 @@ function validate (req, res, next) {
   };
 }
 
+// function for searching for the castle
 function findOne (req, res, next) {
   var castle = Castle.findOne(req.params.id);
   if (!castle) { res.status(404).send({ message: 'Castle not found!'}); }
+  // if castle is not found send error
   else {
     req.body.castle = castle;
     next();
