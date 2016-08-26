@@ -1,7 +1,7 @@
 var Castle = require('../models/castle');
 
 function validate (req, res, next) {
-  if (req.body.password === '[YOUR SECRET PASSWORD]') {
+  if (req.body.password === process.env.PASSWORD) {
     next();
   } else {
     res.status(401).send({ message: 'Unauthorized' });
